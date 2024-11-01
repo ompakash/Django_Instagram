@@ -2,7 +2,7 @@ from django.db import models
 import uuid
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(max_length=500)
+    title = models.CharField(max_length=400)
     artist = models.CharField(max_length=500, null=True)
     url = models.URLField(max_length=500, null=True)
     image = models.URLField(max_length=500)
