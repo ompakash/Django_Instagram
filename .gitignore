@@ -167,7 +167,8 @@ nohup.out
 /mediafiles/
 
 # Ignore migrations
-**/migrations/*
+**/migrations/*.py
+!**/migrations/__init__.py
 
 # Ignore local settings
 **/local_settings.py
