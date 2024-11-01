@@ -3,6 +3,7 @@ from .models import *
 from .forms import *
 from bs4 import BeautifulSoup
 import requests
+from django.contrib import messages
 
 def home_view(request):
     posts = Post.objects.all()
@@ -42,5 +43,6 @@ def post_delete_view(request, pk):
     post = Post.objects.get(id=pk)
     if request.method == 'POST':
         post.delete()
+        messages.success(request, 'Post Deleted')
         return redirect('home')
     return render(request, 'a_posts/post_delete.html',{'post':post})
